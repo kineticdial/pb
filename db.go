@@ -1,69 +1,43 @@
 package pb
 
 import (
+	"encoding/gob"
 	"fmt"
-	"log"
-
-	"github.com/boltdb/bolt"
+	"os"
 )
 
-type DBClient struct {
-	file  string
-	perms int
-}
-
-func NewDBClient() *DBClient {
-	return &DBClient{"./.pb", 0644}
-}
-
-func (c *DBClient) PutObject(b []byte, k []byte, v []byte) {
-	db := c.db()
-	defer db.Close()
-
-	err := db.Update(func(tx *bolt.Tx) error {
-		bucket, err := tx.CreateBucketIfNotExists(b)
-		if err != nil {
-			return err
-		}
-
-		err = bucket.Put(k, v)
-		if err != nil {
-			return err
-		}
-		return nil
-	})
-
+func Put(k string, o interface{}) error {
+	f, err := os.Create(filename(k))
 	if err != nil {
-		log.Fatal(err)
-	}
-}
-
-func (c *DBClient) GetObject(b []byte, k []byte) []byte {
-	var v []byte
-	db := c.db()
-	defer db.Close()
-
-	err := db.View(func(tx *bolt.Tx) error {
-		bucket := tx.Bucket(b)
-		if bucket == nil {
-			return fmt.Errorf("Bucket %q not found!", b)
-		}
-
-		v = bucket.Get(k)
-		return nil
-	})
-
-	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 
-	return v
+	enc := gob.NewEncoder(f)
+	err = enc.Encode(o)
+	if err != nil {
+		return err
+	}
+
+	f.Close()
+	return nil
 }
 
-func (c *DBClient) db() *bolt.DB {
-	db, err := bolt.Open("./.pb", 0644, nil)
+func Get(k string, o interface{}) error {
+	f, err := os.Open(filename(k))
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
-	return db
+
+	dec := gob.NewDecoder(f)
+	err = dec.Decode(o)
+	if err != nil {
+		return err
+	}
+
+	f.Close()
+	return nil
+}
+
+func filename(k string) string {
+	return fmt.Sprintf("./.pb/objects/%s", k)
 }
