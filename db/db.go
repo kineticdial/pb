@@ -1,4 +1,4 @@
-package pb
+package db
 
 import (
 	"encoding/gob"

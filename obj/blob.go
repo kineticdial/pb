@@ -1,8 +1,10 @@
-package pb
+package obj
 
 import (
 	"crypto/sha1"
 	"fmt"
+
+	"github.com/Lead-SCM/pb/db"
 )
 
 type Blob struct {
@@ -15,7 +17,7 @@ func NewBlob(contents string) *Blob {
 
 func GetBlob(k string) (*Blob, error) {
 	var b Blob
-	err := Get(k, &b)
+	err := db.Get(k, &b)
 	if err != nil {
 		return nil, err
 	}
@@ -24,7 +26,7 @@ func GetBlob(k string) (*Blob, error) {
 }
 
 func (b *Blob) Put() error {
-	err := Put(b.Hash(), b)
+	err := db.Put(b.Hash(), b)
 	if err != nil {
 		return err
 	}

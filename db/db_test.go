@@ -1,10 +1,10 @@
-package pb_test
+package db_test
 
 import (
 	"os"
 	"testing"
 
-	"github.com/Lead-SCM/pb"
+	"github.com/Lead-SCM/pb/db"
 )
 
 type Obj struct {
@@ -17,7 +17,7 @@ func TestPutGet(t *testing.T) {
 
 	// Test
 	o0 := Obj{"bar"}
-	err := pb.Put("key", o0)
+	err := db.Put("key", o0)
 
 	if err != nil {
 		t.Log(err)
@@ -25,7 +25,7 @@ func TestPutGet(t *testing.T) {
 	}
 
 	var o1 Obj
-	err = pb.Get("key", &o1)
+	err = db.Get("key", &o1)
 
 	if err != nil {
 		t.Log(err)
