@@ -1,10 +1,11 @@
-package obj_test
+package pb_test
 
 import (
 	"os"
+	"strings"
 	"testing"
 
-	"github.com/Lead-SCM/pb/obj"
+	"github.com/Lead-SCM/pb/pb"
 )
 
 func TestBlobPutGet(t *testing.T) {
@@ -12,21 +13,23 @@ func TestBlobPutGet(t *testing.T) {
 	os.MkdirAll("./.pb/objects", 0777)
 
 	// Test
-	b0 := obj.NewBlob("foo")
+	b0 := pb.NewBlob("foo")
 	err := b0.Put()
 	if err != nil {
 		t.Log(err)
 		t.Fail()
 	}
 
-	b1, err := obj.GetBlob(b0.Hash())
+	b1, err := pb.GetBlob(b0.Hash())
 	if err != nil {
 		t.Log(err)
 		t.Fail()
 	}
 
-	if b0.Contents != b1.Contents {
-		t.Logf("b0: %s; b1: %s\n", b0.Contents, b1.Contents)
+	s0 := b0.ToString()
+	s1 := b1.ToString()
+	if strings.Compare(s0, s1) != 0 {
+		t.Logf("b0: '%s'; b1: '%s'", s0, s1)
 		t.Fail()
 	}
 
