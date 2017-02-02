@@ -26,8 +26,8 @@ func TestBlobPutGet(t *testing.T) {
 		t.Fail()
 	}
 
-	s0 := b0.ToString()
-	s1 := b1.ToString()
+	s0 := b0.String()
+	s1 := b1.String()
 	if strings.Compare(s0, s1) != 0 {
 		t.Logf("b0: '%s'; b1: '%s'", s0, s1)
 		t.Fail()

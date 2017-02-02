@@ -22,8 +22,8 @@ func TestTreeRefString(t *testing.T) {
 	}
 }
 
-func TestTreeDecode(t *testing.T) {
-	tr, err := pb.Decode("100644\tblob\tREADME.md\tabc123")
+func TestDecodeTreeRef(t *testing.T) {
+	tr, err := pb.DecodeTreeRef("100644\tblob\tREADME.md\tabc123")
 	if err != nil {
 		t.Log(err)
 		t.Fail()

@@ -3,10 +3,7 @@ package pb
 import (
 	"bytes"
 	"crypto/sha1"
-	"encoding/base64"
 	"fmt"
-	"io"
-	"os"
 	"sort"
 	"strings"
 )
@@ -16,36 +13,25 @@ type Tree struct {
 }
 
 func GetTree(k string) (*Tree, error) {
-	filename := fmt.Sprintf("./.pb/objects/%s", k)
-	f, err := os.Open(filename)
+	contents, err := GetObject(k)
 	if err != nil {
 		return nil, err
 	}
 
-	buf := bytes.NewBuffer(nil)
-	_, err = io.Copy(buf, f)
-	if err != nil {
-		return nil, err
-	}
-	f.Close()
+	// Trim potential new line from end of file and split lines.
+	refs := strings.Split(
+		strings.TrimRight(contents, "\n"),
+		"\n",
+	)
 
-	decoded, err := base64.StdEncoding.DecodeString(string(buf.Bytes()))
-	if err != nil {
-		return nil, err
-	}
-
-	// Trim potential new line from end of file.
-	decoded_string := strings.TrimRight(string(decoded), "\n")
-	records := strings.Split(decoded_string, "\n")
-
-	trs := make([]*TreeRef, 0, len(records))
-	for _, r := range records {
-		decoded_r, err := Decode(r)
+	trs := make([]*TreeRef, 0, len(refs))
+	for _, ref := range refs {
+		decodedRef, err := DecodeTreeRef(ref)
 		if err != nil {
 			return nil, err
 		}
 
-		trs = append(trs, decoded_r)
+		trs = append(trs, decodedRef)
 	}
 
 	t := &Tree{trs}
@@ -53,16 +39,7 @@ func GetTree(k string) (*Tree, error) {
 }
 
 func (t *Tree) Put() error {
-	filename := fmt.Sprintf("./.pb/objects/%s", t.Hash())
-	f, err := os.Create(filename)
-	if err != nil {
-		return err
-	}
-	encoded := base64.StdEncoding.EncodeToString([]byte(t.String()))
-	f.WriteString(encoded)
-	f.Close()
-
-	return nil
+	return PutObject(t)
 }
 
 func (t *Tree) String() string {

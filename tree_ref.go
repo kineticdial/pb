@@ -17,7 +17,7 @@ type TreeRef struct {
 
 // Decode takes a raw tab-delimited string and serializes it into a TreeRef
 // struct.
-func Decode(s string) (*TreeRef, error) {
+func DecodeTreeRef(s string) (*TreeRef, error) {
 	items := strings.Split(s, "\t")
 
 	// Parse int as octal
