@@ -13,7 +13,7 @@ type object interface {
 	String() string
 }
 
-func PutObject(o object) error {
+func putObject(o object) error {
 	filename := fmt.Sprintf("./.pb/objects/%s", o.Hash())
 	f, err := os.Create(filename)
 	if err != nil {
@@ -27,7 +27,7 @@ func PutObject(o object) error {
 	return nil
 }
 
-func GetObject(k string) (string, error) {
+func getObject(k string) (string, error) {
 	filename := fmt.Sprintf("./.pb/objects/%s", k)
 	f, err := os.Open(filename)
 	if err != nil {

@@ -8,12 +8,15 @@ import (
 	"strings"
 )
 
+// Tree represents a collection of TreeRefs as an abstraction of a directory and
+// its contents.
 type Tree struct {
 	Refs []*TreeRef
 }
 
+// GetTree fetches a Tree from the file k/v store by its SHA1 hash.
 func GetTree(k string) (*Tree, error) {
-	contents, err := GetObject(k)
+	contents, err := getObject(k)
 	if err != nil {
 		return nil, err
 	}
@@ -38,10 +41,12 @@ func GetTree(k string) (*Tree, error) {
 	return t, nil
 }
 
+// Put stores a Tree in memory into the file k/v store.
 func (t *Tree) Put() error {
-	return PutObject(t)
+	return putObject(t)
 }
 
+// String returns a Tree's contents.
 func (t *Tree) String() string {
 	buf := bytes.NewBufferString("")
 
@@ -55,6 +60,7 @@ func (t *Tree) String() string {
 	return buf.String()
 }
 
+// Hash calculates a SHA1 hash of the Tree's contents.
 func (t *Tree) Hash() string {
 	h := sha1.New()
 	h.Write([]byte(t.String()))
