@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/Lead-SCM/pb/pb"
+	"github.com/Lead-SCM/pb"
 )
 
 func TestTreeString(t *testing.T) {

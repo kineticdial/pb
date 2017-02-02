@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Lead-SCM/pb/pb"
+	"github.com/Lead-SCM/pb"
 )
 
 func TestBlobPutGet(t *testing.T) {
@@ -13,7 +13,7 @@ func TestBlobPutGet(t *testing.T) {
 	os.MkdirAll("./.pb/objects", 0777)
 
 	// Test
-	b0 := pb.NewBlob("foo")
+	b0 := &pb.Blob{"foo"}
 	err := b0.Put()
 	if err != nil {
 		t.Log(err)

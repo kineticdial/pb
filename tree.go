@@ -34,7 +34,7 @@ func GetTree(k string) (*Tree, error) {
 		return nil, err
 	}
 
-	// Trim additional new line from end of file.
+	// Trim potential new line from end of file.
 	decoded_string := strings.TrimRight(string(decoded), "\n")
 	records := strings.Split(decoded_string, "\n")
 

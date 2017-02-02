@@ -3,7 +3,7 @@ package pb_test
 import (
 	"testing"
 
-	"github.com/Lead-SCM/pb/pb"
+	"github.com/Lead-SCM/pb"
 )
 
 func TestTreeRefString(t *testing.T) {

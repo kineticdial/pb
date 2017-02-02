@@ -15,7 +15,7 @@ type TreeRef struct {
 	Hash    string
 }
 
-// Decode takes a raw tab-delimited string and serializes it into a Tree Ref
+// Decode takes a raw tab-delimited string and serializes it into a TreeRef
 // struct.
 func Decode(s string) (*TreeRef, error) {
 	items := strings.Split(s, "\t")

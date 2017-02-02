@@ -10,11 +10,7 @@ import (
 )
 
 type Blob struct {
-	contents string
-}
-
-func NewBlob(contents string) *Blob {
-	return &Blob{contents}
+	Contents string
 }
 
 func GetBlob(k string) (*Blob, error) {
@@ -36,7 +32,7 @@ func GetBlob(k string) (*Blob, error) {
 		return nil, err
 	}
 
-	b := NewBlob(string(decoded))
+	b := &Blob{string(decoded)}
 	return b, nil
 }
 
@@ -54,11 +50,11 @@ func (b *Blob) Put() error {
 }
 
 func (b *Blob) ToString() string {
-	return b.contents
+	return b.Contents
 }
 
 func (b *Blob) Hash() string {
 	h := sha1.New()
-	h.Write([]byte(b.contents))
+	h.Write([]byte(b.Contents))
 	return fmt.Sprintf("%x", h.Sum(nil))
 }
