@@ -1,11 +1,10 @@
 package lib_test
 
-import (
-	"os"
-	"testing"
+import "os"
+import "testing"
 
-	"gitlab.com/pab/pb/lib"
-)
+import "gitlab.com/pab/pb/lib"
+import "gitlab.com/pab/pb/testutil"
 
 func TestTreeString(t *testing.T) {
 	tree := &lib.Tree{
@@ -16,12 +15,9 @@ func TestTreeString(t *testing.T) {
 		},
 	}
 
-	res := tree.String()
-	expected := "40000\ttree\tlib\tbcd234\n100644\tblob\tRakefile\tcde345\n100644\tblob\tREADME.md\tabc123\n"
-	if res != expected {
-		t.Logf("res: '%s', expected: '%s'", res, expected)
-		t.Fail()
-	}
+	result := tree.String()
+	expect := "40000\ttree\tlib\tbcd234\n100644\tblob\tRakefile\tcde345\n100644\tblob\tREADME.md\tabc123\n"
+	testutil.AssertString(result, expect, t)
 }
 
 func TestTreePutGet(t *testing.T) {
@@ -45,10 +41,7 @@ func TestTreePutGet(t *testing.T) {
 		t.Fail()
 	}
 
-	if t0.String() != t1.String() {
-		t.Logf("t0: '%s', t1: '%s'", t0.String(), t1.String())
-		t.Fail()
-	}
+	testutil.AssertString(t1.String(), t0.String(), t)
 
 	// Teardown
 	os.RemoveAll("./.pb")

@@ -1,14 +1,13 @@
 package cli_test
 
-import (
-	"bytes"
-	"io"
-	"os"
-	"testing"
+import "bytes"
+import "io"
+import "os"
+import "testing"
 
-	"gitlab.com/pab/pb/cli"
-	"gitlab.com/pab/pb/lib"
-)
+import "gitlab.com/pab/pb/cli"
+import "gitlab.com/pab/pb/lib"
+import "gitlab.com/pab/pb/testutil"
 
 func TestAdd(t *testing.T) {
 	// Setup
@@ -27,17 +26,12 @@ func TestAdd(t *testing.T) {
 	io.Copy(buf, f)
 	f.Close()
 
-	expected := "./test_file.txt 572c291421cd821a5e821e28766d0bdb719c379d"
-	if string(buf.Bytes()) != expected {
-		t.Logf("expected: %s\ngot: %s", expected, string(buf.Bytes()))
-		t.Fail()
-	}
+	expect := "./test_file.txt 572c291421cd821a5e821e28766d0bdb719c379d"
+	testutil.AssertString(string(buf.Bytes()), expect, t)
 
 	b, _ := lib.GetBlob("572c291421cd821a5e821e28766d0bdb719c379d")
 
-	if b.Contents != "contents\n" {
-		t.Fail()
-	}
+	testutil.AssertString(b.Contents, "contents\n", t)
 
 	// Teardown
 	os.RemoveAll("./.pb")
@@ -65,10 +59,9 @@ func TestAddAdditional(t *testing.T) {
 	io.Copy(buf, f)
 	f.Close()
 
-	expected := "./test_file1.txt e53b356df5a76565a769e67ad656e581afc9d1b6\n./test_file2.txt b56fa959a159c3a3ee54824989711aab309805ba"
-	if string(buf.Bytes()) != expected {
-		t.Fail()
-	}
+	expect := "./test_file1.txt e53b356df5a76565a769e67ad656e581afc9d1b6\n./test_file2.txt b56fa959a159c3a3ee54824989711aab309805ba"
+
+	testutil.AssertString(string(buf.Bytes()), expect, t)
 
 	// Teardown
 	os.RemoveAll("./.pb")
@@ -99,11 +92,8 @@ func TestAddMutate(t *testing.T) {
 	io.Copy(buf, f)
 	f.Close()
 
-	expected := "./test_file.txt 5b2489e7bf4366347c0921dcef135c5870a19757"
-	if string(buf.Bytes()) != expected {
-		t.Logf("expected %s\ngot: %s", expected, string(buf.Bytes()))
-		t.Fail()
-	}
+	expect := "./test_file.txt 5b2489e7bf4366347c0921dcef135c5870a19757"
+	testutil.AssertString(string(buf.Bytes()), expect, t)
 
 	// Teardown
 	os.RemoveAll("./.pb")
