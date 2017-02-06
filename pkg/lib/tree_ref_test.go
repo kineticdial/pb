@@ -1,13 +1,13 @@
-package pb_test
+package lib_test
 
 import (
 	"testing"
 
-	"github.com/Lead-SCM/pb"
+	"github.com/Lead-SCM/pb/pkg/lib"
 )
 
 func TestTreeRefString(t *testing.T) {
-	tr := &pb.TreeRef{
+	tr := &lib.TreeRef{
 		Perms:   0100644,
 		RefType: "blob",
 		Name:    "README.md",
@@ -23,7 +23,7 @@ func TestTreeRefString(t *testing.T) {
 }
 
 func TestDecodeTreeRef(t *testing.T) {
-	tr, err := pb.DecodeTreeRef("100644\tblob\tREADME.md\tabc123")
+	tr, err := lib.DecodeTreeRef("100644\tblob\tREADME.md\tabc123")
 	if err != nil {
 		t.Log(err)
 		t.Fail()

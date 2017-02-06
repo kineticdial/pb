@@ -1,11 +1,11 @@
-package pb_test
+package lib_test
 
 import (
 	"os"
 	"strings"
 	"testing"
 
-	"github.com/Lead-SCM/pb"
+	"github.com/Lead-SCM/pb/pkg/lib"
 )
 
 func TestBlobPutGet(t *testing.T) {
@@ -13,14 +13,14 @@ func TestBlobPutGet(t *testing.T) {
 	os.MkdirAll("./.pb/objects", 0777)
 
 	// Test
-	b0 := &pb.Blob{"foo"}
+	b0 := &lib.Blob{"foo"}
 	err := b0.Put()
 	if err != nil {
 		t.Log(err)
 		t.Fail()
 	}
 
-	b1, err := pb.GetBlob(b0.Hash())
+	b1, err := lib.GetBlob(b0.Hash())
 	if err != nil {
 		t.Log(err)
 		t.Fail()

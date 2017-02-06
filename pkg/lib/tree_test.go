@@ -1,15 +1,15 @@
-package pb_test
+package lib_test
 
 import (
 	"os"
 	"testing"
 
-	"github.com/Lead-SCM/pb"
+	"github.com/Lead-SCM/pb/pkg/lib"
 )
 
 func TestTreeString(t *testing.T) {
-	tree := &pb.Tree{
-		Refs: []*pb.TreeRef{
+	tree := &lib.Tree{
+		Refs: []*lib.TreeRef{
 			{0100644, "blob", "README.md", "abc123"},
 			{0040000, "tree", "lib", "bcd234"},
 			{0100644, "blob", "Rakefile", "cde345"},
@@ -29,8 +29,8 @@ func TestTreePutGet(t *testing.T) {
 	os.MkdirAll("./.pb/objects", 0777)
 
 	// Test
-	t0 := &pb.Tree{
-		Refs: []*pb.TreeRef{
+	t0 := &lib.Tree{
+		Refs: []*lib.TreeRef{
 			{0100644, "blob", "README.md", "abc123"},
 			{0040000, "tree", "lib", "bcd234"},
 			{0100644, "blob", "Rakefile", "cde345"},
@@ -38,7 +38,7 @@ func TestTreePutGet(t *testing.T) {
 	}
 
 	t0.Put()
-	t1, err := pb.GetTree(t0.Hash())
+	t1, err := lib.GetTree(t0.Hash())
 
 	if err != nil {
 		t.Log(err)

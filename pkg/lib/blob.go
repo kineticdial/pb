@@ -1,4 +1,4 @@
-package pb
+package lib
 
 import (
 	"crypto/sha1"
