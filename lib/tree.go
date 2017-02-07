@@ -1,12 +1,10 @@
 package lib
 
-import (
-	"bytes"
-	"crypto/sha1"
-	"fmt"
-	"sort"
-	"strings"
-)
+import "bytes"
+import "crypto/sha1"
+import "fmt"
+import "sort"
+import "strings"
 
 // Tree represents a collection of TreeRefs as an abstraction of a directory and
 // its contents.

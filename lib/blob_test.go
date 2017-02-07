@@ -1,12 +1,10 @@
 package lib_test
 
-import (
-	"os"
-	"strings"
-	"testing"
+import "os"
+import "testing"
 
-	"gitlab.com/pab/pb/lib"
-)
+import "gitlab.com/pab/pb/lib"
+import "gitlab.com/pab/pb/testutil"
 
 func TestBlobPutGet(t *testing.T) {
 	// Setup
@@ -26,12 +24,7 @@ func TestBlobPutGet(t *testing.T) {
 		t.Fail()
 	}
 
-	s0 := b0.String()
-	s1 := b1.String()
-	if strings.Compare(s0, s1) != 0 {
-		t.Logf("b0: '%s'; b1: '%s'", s0, s1)
-		t.Fail()
-	}
+	testutil.AssertString(b0.String(), b1.String(), t)
 
 	// Teardown
 	os.RemoveAll("./.pb")

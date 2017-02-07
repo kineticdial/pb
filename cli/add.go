@@ -1,16 +1,14 @@
 package cli
 
-import (
-	"bytes"
-	"fmt"
-	"io"
-	"io/ioutil"
-	"log"
-	"os"
-	"strings"
+import "bytes"
+import "fmt"
+import "io"
+import "io/ioutil"
+import "log"
+import "os"
+import "strings"
 
-	"gitlab.com/pab/pb/lib"
-)
+import "gitlab.com/pab/pb/lib"
 
 // Add stages a given file to the repository.
 func Add(path string) {

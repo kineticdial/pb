@@ -1,10 +1,8 @@
 package lib
 
-import (
-	"fmt"
-	"strconv"
-	"strings"
-)
+import "fmt"
+import "strconv"
+import "strings"
 
 // TreeRef represents the n nodes (blobs or additional trees) that a Tree can
 // reference.

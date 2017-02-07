@@ -1,9 +1,7 @@
 package lib
 
-import (
-	"crypto/sha1"
-	"fmt"
-)
+import "crypto/sha1"
+import "fmt"
 
 // Blob represents the text inside a file that a TreeRef may point to.
 type Blob struct {

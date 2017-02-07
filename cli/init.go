@@ -1,10 +1,8 @@
 package cli
 
-import (
-	"fmt"
-	"log"
-	"os"
-)
+import "fmt"
+import "log"
+import "os"
 
 // Init initializes a new pb repository at the working directory.
 func Init() {

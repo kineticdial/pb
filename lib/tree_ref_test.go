@@ -1,10 +1,9 @@
 package lib_test
 
-import (
-	"testing"
+import "testing"
 
-	"gitlab.com/pab/pb/lib"
-)
+import "gitlab.com/pab/pb/lib"
+import "gitlab.com/pab/pb/testutil"
 
 func TestTreeRefString(t *testing.T) {
 	tr := &lib.TreeRef{
@@ -14,12 +13,10 @@ func TestTreeRefString(t *testing.T) {
 		Hash:    "abc123",
 	}
 
-	res := tr.String()
-	expected := "100644\tblob\tREADME.md\tabc123"
-	if res != expected {
-		t.Logf("res: '%s', expected: '%s'", res, expected)
-		t.Fail()
-	}
+	result := tr.String()
+	expect := "100644\tblob\tREADME.md\tabc123"
+
+	testutil.AssertString(result, expect, t)
 }
 
 func TestDecodeTreeRef(t *testing.T) {

@@ -1,12 +1,10 @@
 package lib
 
-import (
-	"bytes"
-	"encoding/base64"
-	"fmt"
-	"io"
-	"os"
-)
+import "bytes"
+import "encoding/base64"
+import "fmt"
+import "io"
+import "os"
 
 type object interface {
 	Hash() string
