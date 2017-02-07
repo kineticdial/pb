@@ -1,0 +1,22 @@
+image: golang:latest
+
+before_script:
+    - ln -s /builds /go/src/gitlab.com
+    - cd /go/src/gitlab.com/pab/pb
+
+stages:
+    - test
+    - build
+
+format:
+    stage: test
+    script:
+        - make test
+
+compile:
+    stage: build
+    script:
+        - make build
+    artifacts:
+        paths:
+            - pb
