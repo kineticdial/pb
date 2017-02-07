@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/Lead-SCM/pb/pkg/lib"
+	"gitlab.com/pab/pb/pkg/lib"
 )
 
 func TestBlobPutGet(t *testing.T) {

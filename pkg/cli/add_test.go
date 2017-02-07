@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/Lead-SCM/pb/pkg/cli"
-	"github.com/Lead-SCM/pb/pkg/lib"
+	"gitlab.com/pab/pb/pkg/cli"
+	"gitlab.com/pab/pb/pkg/lib"
 )
 
 func TestAdd(t *testing.T) {

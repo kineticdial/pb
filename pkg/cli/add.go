@@ -9,7 +9,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/Lead-SCM/pb/pkg/lib"
+	"gitlab.com/pab/pb/pkg/lib"
 )
 
 // Add stages a given file to the repository.
