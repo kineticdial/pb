@@ -3,7 +3,7 @@ package lib_test
 import (
 	"testing"
 
-	"gitlab.com/pab/pb/pkg/lib"
+	"gitlab.com/pab/pb/lib"
 )
 
 func TestTreeRefString(t *testing.T) {

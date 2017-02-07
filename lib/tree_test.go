@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"gitlab.com/pab/pb/pkg/lib"
+	"gitlab.com/pab/pb/lib"
 )
 
 func TestTreeString(t *testing.T) {

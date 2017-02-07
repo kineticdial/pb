@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	"gitlab.com/pab/pb/pkg/cli"
-	"gitlab.com/pab/pb/pkg/lib"
+	"gitlab.com/pab/pb/cli"
+	"gitlab.com/pab/pb/lib"
 )
 
 func TestAdd(t *testing.T) {

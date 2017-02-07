@@ -9,7 +9,7 @@ import (
 	"os"
 	"strings"
 
-	"gitlab.com/pab/pb/pkg/lib"
+	"gitlab.com/pab/pb/lib"
 )
 
 // Add stages a given file to the repository.
