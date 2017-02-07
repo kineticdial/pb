@@ -1,9 +1,0 @@
-language: go
-
-install:
-  - go get -u github.com/golang/lint/golint
-
-go:
-  - 1.x
-  - 1.6
-  - 1.7.x
