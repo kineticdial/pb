@@ -3,8 +3,9 @@ package lib_test
 import "os"
 import "testing"
 
+import "github.com/stretchr/testify/assert"
+
 import "gitlab.com/pab/pb/lib"
-import "gitlab.com/pab/pb/testutil"
 
 func TestTreeString(t *testing.T) {
 	tree := &lib.Tree{
@@ -17,7 +18,7 @@ func TestTreeString(t *testing.T) {
 
 	result := tree.String()
 	expect := "40000\ttree\tlib\tbcd234\n100644\tblob\tRakefile\tcde345\n100644\tblob\tREADME.md\tabc123\n"
-	testutil.AssertString(result, expect, t)
+	assert.Equal(t, expect, result)
 }
 
 func TestTreePutGet(t *testing.T) {
@@ -41,7 +42,7 @@ func TestTreePutGet(t *testing.T) {
 		t.Fail()
 	}
 
-	testutil.AssertString(t1.String(), t0.String(), t)
+	assert.Equal(t, t0.String(), t1.String())
 
 	// Teardown
 	os.RemoveAll("./.pb")

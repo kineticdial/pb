@@ -3,8 +3,9 @@ package lib_test
 import "os"
 import "testing"
 
+import "github.com/stretchr/testify/assert"
+
 import "gitlab.com/pab/pb/lib"
-import "gitlab.com/pab/pb/testutil"
 
 func TestBlobPutGet(t *testing.T) {
 	// Setup
@@ -24,7 +25,7 @@ func TestBlobPutGet(t *testing.T) {
 		t.Fail()
 	}
 
-	testutil.AssertString(b0.String(), b1.String(), t)
+	assert.Equal(t, b0.String(), b1.String())
 
 	// Teardown
 	os.RemoveAll("./.pb")

@@ -2,8 +2,9 @@ package lib_test
 
 import "testing"
 
+import "github.com/stretchr/testify/assert"
+
 import "gitlab.com/pab/pb/lib"
-import "gitlab.com/pab/pb/testutil"
 
 func TestTreeRefString(t *testing.T) {
 	tr := &lib.TreeRef{
@@ -16,7 +17,7 @@ func TestTreeRefString(t *testing.T) {
 	result := tr.String()
 	expect := "100644\tblob\tREADME.md\tabc123"
 
-	testutil.AssertString(result, expect, t)
+	assert.Equal(t, expect, result)
 }
 
 func TestDecodeTreeRef(t *testing.T) {

@@ -5,8 +5,9 @@ import "os"
 import "testing"
 import "time"
 
+import "github.com/stretchr/testify/assert"
+
 import "gitlab.com/pab/pb/lib"
-import "gitlab.com/pab/pb/testutil"
 
 func TestCommitString(t *testing.T) {
 	now := time.Now()
@@ -26,7 +27,7 @@ func TestCommitString(t *testing.T) {
 		now,
 	)
 
-	testutil.AssertString(c.String(), expect, t)
+	assert.Equal(t, expect, c.String())
 }
 
 func TestCommitPutGet(t *testing.T) {
@@ -49,7 +50,7 @@ func TestCommitPutGet(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	testutil.AssertString(c1.String(), c0.String(), t)
+	assert.Equal(t, c0.String(), c1.String())
 
 	// Teardown
 	os.RemoveAll("./.pb")

@@ -5,9 +5,10 @@ import "io"
 import "os"
 import "testing"
 
+import "github.com/stretchr/testify/assert"
+
 import "gitlab.com/pab/pb/cli"
 import "gitlab.com/pab/pb/lib"
-import "gitlab.com/pab/pb/testutil"
 
 func TestAdd(t *testing.T) {
 	// Setup
@@ -27,11 +28,11 @@ func TestAdd(t *testing.T) {
 	f.Close()
 
 	expect := "./test_file.txt 572c291421cd821a5e821e28766d0bdb719c379d"
-	testutil.AssertString(string(buf.Bytes()), expect, t)
+	assert.Equal(t, string(buf.Bytes()), expect)
 
 	b, _ := lib.GetBlob("572c291421cd821a5e821e28766d0bdb719c379d")
 
-	testutil.AssertString(b.Contents, "contents\n", t)
+	assert.Equal(t, b.Contents, "contents\n")
 
 	// Teardown
 	os.RemoveAll("./.pb")
@@ -61,7 +62,7 @@ func TestAddAdditional(t *testing.T) {
 
 	expect := "./test_file1.txt e53b356df5a76565a769e67ad656e581afc9d1b6\n./test_file2.txt b56fa959a159c3a3ee54824989711aab309805ba"
 
-	testutil.AssertString(string(buf.Bytes()), expect, t)
+	assert.Equal(t, string(buf.Bytes()), expect)
 
 	// Teardown
 	os.RemoveAll("./.pb")
@@ -93,7 +94,7 @@ func TestAddMutate(t *testing.T) {
 	f.Close()
 
 	expect := "./test_file.txt 5b2489e7bf4366347c0921dcef135c5870a19757"
-	testutil.AssertString(string(buf.Bytes()), expect, t)
+	assert.Equal(t, string(buf.Bytes()), expect)
 
 	// Teardown
 	os.RemoveAll("./.pb")
