@@ -9,7 +9,7 @@ import "strings"
 // Tree represents a collection of TreeRefs as an abstraction of a directory and
 // its contents.
 type Tree struct {
-	Refs []*TreeRef
+	Refs []*TreeRef // Files/subdirs of current dir
 }
 
 // GetTree fetches a Tree from the file k/v store by its SHA1 hash.

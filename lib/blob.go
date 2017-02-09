@@ -5,7 +5,7 @@ import "fmt"
 
 // Blob represents the text inside a file that a TreeRef may point to.
 type Blob struct {
-	Contents string
+	Contents string // Contents of file
 }
 
 // GetBlob fetches a Blob from the file k/v store by its SHA1 hash.

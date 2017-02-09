@@ -7,10 +7,10 @@ import "strings"
 // TreeRef represents the n nodes (blobs or additional trees) that a Tree can
 // reference.
 type TreeRef struct {
-	Perms   int
-	RefType string
-	Name    string
-	Hash    string
+	Perms   int    // Permissions of referenced file/dir
+	RefType string // Blob or Tree
+	Name    string // Name of file/dir
+	Hash    string // Hash of Blob/Tree
 }
 
 // DecodeTreeRef takes a raw tab-delimited string and serializes it into a
