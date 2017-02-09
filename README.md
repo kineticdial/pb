@@ -47,6 +47,23 @@ $ make test
 $ make build
 ```
 
+## Contributing
+
+Suggestions, comments, patches and other contributions are welcome. When you
+feel as if your contribution is ready, simply open a pull-request. Here are
+some basic rules about contributions:
+
+- I have strong notions of unity and harmony of software. This means that I
+  may rewrite any patch suggestion, if only to keep the coding style
+  consistent, or to better match long-term goals that I have not made explicit.
+- If I reject a suggestion, I will normally explain why, though I cannot
+  promise that the explanation will be convincing. Even rejected suggestions
+  have value, since they force me to put the underlying concepts into words.
+- Resulting code uses the BSD-3-Clause license, listing me (and only me) as the
+  author. I will still list contributors in a section below.
+
+This contribution guide was inspired by (i.e. stolen from) [BearSSL's contribution guide][bearssl].
+
 ## Inspiration
 
 - [Git](https://git-scm.com)
@@ -68,3 +85,4 @@ developer to download the complete history would take an incredible amount of ti
 [godoc]: https://godoc.org/github.com/Lead-SCM/pb
 [godoc-badge]: https://godoc.org/github.com/Lead-SCM/pb?status.svg
 [quote]: https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
+[bearssl]: https://bearssl.org/contrib.html
