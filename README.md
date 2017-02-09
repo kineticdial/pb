@@ -1,3 +1,11 @@
 # Lead-SCM (pb)
+[![travis][travis-badge]][travis]
+[![Go Report Card][goreport-badge]][goreport]
+[![GoDoc][godoc-badge]][godoc]
 
-[![travis](https://api.travis-ci.org/Lead-SCM/pb.svg?branch=master)](https://travis-ci.org/Lead-SCM/pb) [![Go Report Card](https://goreportcard.com/badge/github.com/Lead-SCM/pb)](https://goreportcard.com/report/github.com/Lead-SCM/pb) [![GoDoc](https://godoc.org/github.com/Lead-SCM/pb?status.svg)](https://godoc.org/github.com/Lead-SCM/pb)
+[travis]: https://travis-ci.org/Lead-SCM/pb
+[travis-badge]: https://api.travis-ci.org/Lead-SCM/pb.svg?branch=master
+[goreport]: https://goreportcard.com/report/github.com/Lead-SCM/pb
+[goreport-badge]: https://goreportcard.com/badge/github.com/Lead-SCM/pb
+[godoc]: https://godoc.org/github.com/Lead-SCM/pb
+[godoc-badge]: https://godoc.org/github.com/Lead-SCM/pb?status.svg
