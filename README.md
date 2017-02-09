@@ -1,4 +1,4 @@
-# Lead-SCM (pb)
+# Lead-SCM (`pb`)
 [![travis][travis-badge]][travis]
 [![Go Report Card][goreport-badge]][goreport]
 [![GoDoc][godoc-badge]][godoc]
