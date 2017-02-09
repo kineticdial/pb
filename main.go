@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"os"
+
+	"github.com/Lead-SCM/pb/cli"
+)
 
 func main() {
-	fmt.Println("no-op")
+	os.Exit(cli.Main())
 }

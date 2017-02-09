@@ -9,8 +9,27 @@ import "os"
 import "strings"
 
 import "github.com/Lead-SCM/pb/lib"
+import "github.com/mitchellh/cli"
 
-// Add stages a given file to the repository.
+type AddCommand struct {
+	Ui cli.Ui
+}
+
+func (c *AddCommand) Help() string {
+	return "Add a file to the working index"
+}
+
+func (c *AddCommand) Synopsis() string {
+	return c.Help()
+}
+
+// Run stages a given file to the repository.
+func (c *AddCommand) Run(args []string) int {
+	path := args[0]
+	Add(path)
+	return 0
+}
+
 func Add(path string) {
 	f, err := os.Open(path)
 	if err != nil {
@@ -25,7 +44,7 @@ func Add(path string) {
 	f.Close()
 
 	// Persist file as blob in object store
-	b := &lib.Blob{string(buf.Bytes())}
+	b := &lib.Blob{Contents: string(buf.Bytes())}
 	err = b.Put()
 	if err != nil {
 		log.Fatal(err)
