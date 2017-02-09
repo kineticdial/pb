@@ -77,6 +77,23 @@ Git.
 †Companies with monolithic repos and GBs of history (e.g. Microsoft Windows) cannot
 realistically be downloaded to a single hard-drive. Even if it could, forcing each
 developer to download the complete history would take an incredible amount of time.
+See below.
+
+```
+$ time git clone https://github.com/torvalds/linux.git
+Cloning into 'linux'...
+remote: Counting objects: 5163320, done.
+remote: Compressing objects: 100% (3066/3066), done.
+remote: Total 5163320 (delta 2158), reused 306 (delta 306), pack-reused 5159939
+Receiving objects: 100% (5163320/5163320), 1.67 GiB | 761.00 KiB/s, done.
+Resolving deltas: 100% (4269857/4269857), done.
+Checking connectivity... done.
+Checking out files: 100% (57202/57202), done.
+
+real	44m28.483s
+user	3m45.883s
+sys	2m11.837s
+```
 
 [travis]: https://travis-ci.org/Lead-SCM/pb
 [travis-badge]: https://api.travis-ci.org/Lead-SCM/pb.svg?branch=master
