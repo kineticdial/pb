@@ -33,7 +33,7 @@ Lead-SCM is a distributed version control system (DVCS); it aims to replace Git.
 to be solved in the past by providing new abstractions over Git. Lead aims to replace
 Git.
 
-†Companies with monolithic repos with GBs of history (e.g. Microsoft Windows) cannot
+†Companies with monolithic repos and GBs of history (e.g. Microsoft Windows) cannot
 realistically be downloaded to a single hard-drive. Even if it could, forcing each
 developer to download the complete history would take an incredible amount of time.
 
