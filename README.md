@@ -17,7 +17,7 @@ Lead-SCM is a distributed version control system (DVCS); it aims to replace Git.
   via HTML (`pb serve localhost:8080`) or on the CLI.
 - Lead will not need a full-checkout in 'lazy' mode. Instead blobs and trees will
   be lazy-loaded from any peer providing the SHA1 hash of the object. This is so that
-  Lead can adequately host extremely large projects that obviates a full-checkout.
+  Lead can adequately host extremely large projects that precludes a full-checkout.
 
 *Git is known to have a bloated, unclear user interface. Such problems have attempted
 to be solved in the past by providing new abstractions over Git. Lead aims to replace
