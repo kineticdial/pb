@@ -34,7 +34,7 @@ to be solved in the past by providing new abstractions over Git. Lead aims to re
 Git.
 
 †Companies with monolithic repos with GBs of history (e.g. Microsoft Windows) cannot
-realistically downloaded to a single hard-drive. Even if it could, forcing each
+realistically be downloaded to a single hard-drive. Even if it could, forcing each
 developer to download the complete history would take an incredible amount of time.
 
 [travis]: https://travis-ci.org/Lead-SCM/pb
