@@ -8,7 +8,7 @@ import "log"
 import "os"
 import "strings"
 
-import "gitlab.com/pab/pb/lib"
+import "github.com/Lead-SCM/pb/lib"
 
 // Add stages a given file to the repository.
 func Add(path string) {

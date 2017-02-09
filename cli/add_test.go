@@ -7,8 +7,8 @@ import "testing"
 
 import "github.com/stretchr/testify/assert"
 
-import "gitlab.com/pab/pb/cli"
-import "gitlab.com/pab/pb/lib"
+import "github.com/Lead-SCM/pb/cli"
+import "github.com/Lead-SCM/pb/lib"
 
 func TestAdd(t *testing.T) {
 	// Setup
