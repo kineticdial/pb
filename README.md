@@ -23,6 +23,10 @@ Lead-SCM is a distributed version control system (DVCS); it aims to replace Git.
   be lazy-loaded from any peer providing the SHA1 hash of the object. This is so that
   Lead can adequately host extremely large projects that preclude a full-checkout†.
 
+## Can I use Lead yet?
+
+**No.** Major features are in progress or have yet to be implemented.
+
 ## Testing, Building, and Installing
 
 Assert you've downloaded the repository and configured your `PATH` and `GOPATH`
