@@ -5,6 +5,4 @@ install:
   - go get -u github.com/stretchr/testify
 
 go:
-  - 1.x
-  - 1.6
   - 1.7.x
