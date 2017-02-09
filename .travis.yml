@@ -1,8 +1,7 @@
 language: go
 
 install:
-  - go get -u github.com/golang/lint/golint
-  - go get -u github.com/stretchr/testify
+  - ./configure
 
 go:
   - 1.7.x

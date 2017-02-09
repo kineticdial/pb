@@ -12,7 +12,7 @@ Lead-SCM is a distributed version control system (DVCS); it aims to replace Git.
 ## Short-term Goals
 
 - Provide a simplified* Git-like experience for version control.
-- Furthermore, reach feature-parity with Git with select exceptions.
+- Furthermore, reach feature-parity with Git with select exceptions (TBD).
 
 ## Long-term Goals
 
@@ -22,6 +22,30 @@ Lead-SCM is a distributed version control system (DVCS); it aims to replace Git.
 - Lead will not need a full-checkout in 'lazy' mode. Instead blobs and trees will
   be lazy-loaded from any peer providing the SHA1 hash of the object. This is so that
   Lead can adequately host extremely large projects that preclude a full-checkout†.
+
+## Testing, Building, and Installing
+
+Assert you've downloaded the repository and configured your `PATH` and `GOPATH`
+correctly.
+
+### Option A: For use
+
+```
+$ ./configure && make install
+```
+
+### Option B: For development
+
+```
+# Install dependencies
+$ ./configure
+
+# Running unit tests
+$ make test
+
+# Building 
+$ make build
+```
 
 ## Inspiration
 
