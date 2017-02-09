@@ -17,16 +17,15 @@ func Main() int {
 		Writer:      os.Stdout,
 		ErrorWriter: os.Stderr,
 	}
+
 	c := cli.NewCLI(appName, version)
 	c.Args = os.Args[1:]
 	c.Commands = map[string]cli.CommandFactory{
 		"add": func() (cli.Command, error) {
-			return &AddCommand{
-				Ui: &cli.ColoredUi{
-					Ui:          ui,
-					OutputColor: cli.UiColorBlue,
-				},
-			}, nil
+			return &AddCommand{Ui: ui}, nil
+		},
+		"init": func() (cli.Command, error) {
+			return &InitCommand{Ui: ui}, nil
 		},
 	}
 
