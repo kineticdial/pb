@@ -5,6 +5,10 @@
 
 Lead-SCM is a distributed version control system (DVCS); it aims to replace Git.
 
+> Git doesn’t so much have a leaky abstraction as no abstraction. There is
+> essentially no distinction between implementation detail and user interface.
+> – [Steve Bennett][quote]
+
 ## Short-term Goals
 
 - Provide a simplified* Git-like experience for version control.
@@ -35,3 +39,4 @@ Git.
 [goreport-badge]: https://goreportcard.com/badge/github.com/Lead-SCM/pb
 [godoc]: https://godoc.org/github.com/Lead-SCM/pb
 [godoc-badge]: https://godoc.org/github.com/Lead-SCM/pb?status.svg
+[quote]: https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
