@@ -22,10 +22,10 @@ func Main() int {
 	c.Args = os.Args[1:]
 	c.Commands = map[string]cli.CommandFactory{
 		"add": func() (cli.Command, error) {
-			return &AddCommand{Ui: ui}, nil
+			return &AddCommand{UI: ui}, nil
 		},
 		"init": func() (cli.Command, error) {
-			return &InitCommand{Ui: ui}, nil
+			return &InitCommand{UI: ui}, nil
 		},
 	}
 

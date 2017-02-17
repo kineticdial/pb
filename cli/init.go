@@ -6,18 +6,23 @@ import "os"
 
 import "github.com/mitchellh/cli"
 
+// InitCommand is the controller for initializing a new Lead repository.
+// TODO: Gracefully handle if already in a Lead repository.
 type InitCommand struct {
-	Ui cli.Ui
+	UI cli.Ui
 }
 
+// Help displays explanitory text for the InitCommand.
 func (c *InitCommand) Help() string {
 	return "Initialize a new pb repository at working directory"
 }
 
+// Synopsis is aliased to Help.
 func (c *InitCommand) Synopsis() string {
 	return c.Help()
 }
 
+// Run performs the initialization.
 func (c *InitCommand) Run(_ []string) int {
 	Init()
 	return 0

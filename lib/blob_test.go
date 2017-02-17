@@ -12,7 +12,7 @@ func TestBlobPutGet(t *testing.T) {
 	os.MkdirAll("./.pb/objects", 0777)
 
 	// Test
-	b0 := &lib.Blob{"foo"}
+	b0 := &lib.Blob{Contents: "foo"}
 	err := b0.Put()
 	if err != nil {
 		t.Log(err)

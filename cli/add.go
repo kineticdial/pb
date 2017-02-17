@@ -11,14 +11,19 @@ import "strings"
 import "github.com/Lead-SCM/pb/lib"
 import "github.com/mitchellh/cli"
 
+// AddCommand is the controller for staging files to the working area. Right now
+// you have to add one file at a time, but in the future (TODO) you can specify
+// whole directories.
 type AddCommand struct {
-	Ui cli.Ui
+	UI cli.Ui
 }
 
+// Help displays explanitory text for the AddCommand.
 func (c *AddCommand) Help() string {
 	return "Add a file to the working index"
 }
 
+// Synopsis is aliased to Help.
 func (c *AddCommand) Synopsis() string {
 	return c.Help()
 }
@@ -30,6 +35,8 @@ func (c *AddCommand) Run(args []string) int {
 	return 0
 }
 
+// Add a file to the working index. If the file location is already in the
+// working index, update the blob reference for that location.
 func Add(path string) {
 	f, err := os.Open(path)
 	if err != nil {
