@@ -1,9 +1,9 @@
-# Lead-SCM `pb`
+# Lead `pb`
 [![travis][travis-badge]][travis]
 [![Go Report Card][goreport-badge]][goreport]
 [![GoDoc][godoc-badge]][godoc]
 
-Lead-SCM is a distributed version control system (DVCS); it aims to replace Git.
+Lead is a distributed version control system (DVCS); it aims to replace Git.
 
 > Git doesn’t so much have a leaky abstraction as **no** abstraction. There is
 > essentially no distinction between implementation detail and user interface.
