@@ -8,7 +8,7 @@ import "log"
 import "os"
 import "strings"
 
-import "github.com/Lead-SCM/pb/lib"
+import "github.com/lead-scm/pb/lib"
 import "github.com/mitchellh/cli"
 
 // AddCommand is the controller for staging files to the working area. Right now

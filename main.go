@@ -2,7 +2,7 @@ package main
 
 import "os"
 
-import "github.com/Lead-SCM/pb/cli"
+import "github.com/lead-scm/pb/cli"
 
 func main() {
 	os.Exit(cli.Main())

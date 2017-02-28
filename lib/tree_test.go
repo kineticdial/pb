@@ -5,7 +5,7 @@ import "testing"
 
 import "github.com/stretchr/testify/assert"
 
-import "github.com/Lead-SCM/pb/lib"
+import "github.com/lead-scm/pb/lib"
 
 func TestTreeString(t *testing.T) {
 	tree := &lib.Tree{

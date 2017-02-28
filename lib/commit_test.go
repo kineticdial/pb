@@ -7,7 +7,7 @@ import "time"
 
 import "github.com/stretchr/testify/assert"
 
-import "github.com/Lead-SCM/pb/lib"
+import "github.com/lead-scm/pb/lib"
 
 func TestCommitString(t *testing.T) {
 	now := time.Now()
