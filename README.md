@@ -99,11 +99,11 @@ user	3m45.883s
 sys	2m11.837s
 ```
 
-[travis]: https://travis-ci.org/Lead-SCM/pb
-[travis-badge]: https://api.travis-ci.org/Lead-SCM/pb.svg?branch=master
-[goreport]: https://goreportcard.com/report/github.com/Lead-SCM/pb
-[goreport-badge]: https://goreportcard.com/badge/github.com/Lead-SCM/pb
-[godoc]: https://godoc.org/github.com/Lead-SCM/pb
-[godoc-badge]: https://godoc.org/github.com/Lead-SCM/pb?status.svg
+[travis]: https://travis-ci.org/lead-scm/pb
+[travis-badge]: https://api.travis-ci.org/lead-scm/pb.svg?branch=master
+[goreport]: https://goreportcard.com/report/github.com/lead-scm/pb
+[goreport-badge]: https://goreportcard.com/badge/github.com/lead-scm/pb
+[godoc]: https://godoc.org/github.com/lead-scm/pb
+[godoc-badge]: https://godoc.org/github.com/lead-scm/pb?status.svg
 [quote]: https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
 [bearssl]: https://bearssl.org/contrib.html
