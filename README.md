@@ -17,11 +17,12 @@ Lead is a distributed version control system (DVCS); it aims to replace Git.
 ## Long-term Goals
 
 - Lead will be self-hosting. No third-party (like GitHub) will be necessary to
-  open pull-requests, perform code-reviews, etc. Everything can be performed either
-  via HTML (`pb serve localhost:8080`) or on the CLI.
+  open pull-requests, perform code-reviews, etc. Everything can be performed
+  either via HTML (`pb serve localhost:8080`) or on the CLI.
 - Lead will not need a full-checkout in 'lazy' mode. Instead blobs and trees will
-  be lazy-loaded from any peer providing the SHA1 hash of the object. This is so that
-  Lead can adequately host extremely large projects that preclude a full-checkout†.
+  be lazy-loaded from any peer providing the SHA1 hash of the object. This is so
+  that Lead can adequately host extremely large projects that preclude a
+  full-checkout†.
 
 ## Can I use Lead yet?
 
@@ -47,7 +48,7 @@ $ ./configure
 # Running unit tests
 $ make test
 
-# Building 
+# Building
 $ make build
 ```
 
@@ -66,22 +67,24 @@ some basic rules about contributions:
 - Resulting code uses the BSD-3-Clause license, listing me (and only me) as the
   author. I will still list contributors in a section below.
 
-This contribution guide was inspired by (i.e. stolen from) [BearSSL's contribution guide][bearssl].
+This contribution guide was inspired by (i.e. stolen from)
+[BearSSL's contribution guide][bearssl].
 
 ## Inspiration
 
 - [Git](https://git-scm.com)
 - [Mercurial](https://mercurial-scm.org)
 - [Fossil](http://fossil-scm.org)
+- [Darcs](http://darcs.net/)
 
-*Git is known to have a bloated, unclear user interface. Such problems have attempted
-to be solved in the past by providing new abstractions over Git. Lead aims to replace
-Git.
+*Git is known to have a bloated, unclear user interface. Such problems have
+attempted to be solved in the past by providing new abstractions over Git. Lead
+aims to replace Git.
 
-†Companies with monolithic repos and GBs of history (e.g. Microsoft Windows) cannot
-realistically be downloaded to a single hard-drive. Even if it could, forcing each
-developer to download the complete history would take an incredible amount of time.
-See below.
+†Companies with monolithic repos and GBs of history (e.g. Microsoft Windows)
+cannot realistically be downloaded to a single hard-drive. Even if it could,
+forcing each developer to download the complete history would take an incredible
+amount of time. See below.
 
 ```
 $ time git clone https://github.com/torvalds/linux.git
