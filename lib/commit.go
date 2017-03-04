@@ -1,6 +1,6 @@
 package lib
 
-import "crypto/sha1"
+import "crypto/sha256"
 import "fmt"
 import "strings"
 import "time"
@@ -66,9 +66,9 @@ func (c *Commit) String() string {
 	)
 }
 
-// Hash returns the SHA1 hash representation of a commit.
+// Hash returns the SHA256 hash representation of a commit.
 func (c *Commit) Hash() string {
-	h := sha1.New()
+	h := sha256.New()
 	h.Write([]byte(c.Tree))
 	h.Write([]byte(c.Parent))
 	h.Write([]byte(c.Author))

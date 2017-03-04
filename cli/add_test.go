@@ -27,12 +27,12 @@ func TestAdd(t *testing.T) {
 	io.Copy(buf, f)
 	f.Close()
 
-	expect := "./test_file.txt 572c291421cd821a5e821e28766d0bdb719c379d"
-	assert.Equal(t, string(buf.Bytes()), expect)
+	expect := "./test_file.txt bfe5ed57e6e323555b379c660aa8d35b70c2f8f07cf03ad6747266495ac13be0"
+	assert.Equal(t, expect, string(buf.Bytes()))
 
-	b, _ := lib.GetBlob("572c291421cd821a5e821e28766d0bdb719c379d")
+	b, _ := lib.GetBlob("bfe5ed57e6e323555b379c660aa8d35b70c2f8f07cf03ad6747266495ac13be0")
 
-	assert.Equal(t, b.Contents, "contents\n")
+	assert.Equal(t, "contents\n", b.Contents)
 
 	// Teardown
 	os.RemoveAll("./.pb")
@@ -60,9 +60,9 @@ func TestAddAdditional(t *testing.T) {
 	io.Copy(buf, f)
 	f.Close()
 
-	expect := "./test_file1.txt e53b356df5a76565a769e67ad656e581afc9d1b6\n./test_file2.txt b56fa959a159c3a3ee54824989711aab309805ba"
+	expect := "./test_file1.txt 8f88da056e2ed130ee23b3b61245d2e0948fe335236dcb23a100a087f92130f2\n./test_file2.txt e2c722b4fd19f306c7c5967bb9b53cb54e01384cf7ad0bdedd42c8bf3525359f"
 
-	assert.Equal(t, string(buf.Bytes()), expect)
+	assert.Equal(t, expect, string(buf.Bytes()))
 
 	// Teardown
 	os.RemoveAll("./.pb")
@@ -93,8 +93,8 @@ func TestAddMutate(t *testing.T) {
 	io.Copy(buf, f)
 	f.Close()
 
-	expect := "./test_file.txt 5b2489e7bf4366347c0921dcef135c5870a19757"
-	assert.Equal(t, string(buf.Bytes()), expect)
+	expect := "./test_file.txt 89ff0296725a405977e9d6b1fd7384b79c1982b22b1a926a8f93e483db60fefa"
+	assert.Equal(t, expect, string(buf.Bytes()))
 
 	// Teardown
 	os.RemoveAll("./.pb")

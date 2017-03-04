@@ -1,7 +1,7 @@
 package lib
 
 import "bytes"
-import "crypto/sha1"
+import "crypto/sha256"
 import "fmt"
 import "sort"
 import "strings"
@@ -12,7 +12,7 @@ type Tree struct {
 	Refs []*TreeRef // Files/subdirs of current dir
 }
 
-// GetTree fetches a Tree from the file k/v store by its SHA1 hash.
+// GetTree fetches a Tree from the file k/v store by its SHA256 hash.
 func GetTree(k string) (*Tree, error) {
 	contents, err := getObject(k)
 	if err != nil {
@@ -58,9 +58,9 @@ func (t *Tree) String() string {
 	return buf.String()
 }
 
-// Hash calculates a SHA1 hash of the Tree's contents.
+// Hash calculates a SHA256 hash of the Tree's contents.
 func (t *Tree) Hash() string {
-	h := sha1.New()
+	h := sha256.New()
 	h.Write([]byte(t.String()))
 
 	return fmt.Sprintf("%x", h.Sum(nil))

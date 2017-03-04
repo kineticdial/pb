@@ -20,7 +20,7 @@ Lead is a distributed version control system (DVCS); it aims to replace Git.
   open pull-requests, perform code-reviews, etc. Everything can be performed
   either via HTML (`pb serve localhost:8080`) or on the CLI.
 - Lead will not need a full-checkout in 'lazy' mode. Instead blobs and trees will
-  be lazy-loaded from any peer providing the SHA1 hash of the object. This is so
+  be lazy-loaded from any peer providing the SHA256 hash of the object. This is so
   that Lead can adequately host extremely large projects that preclude a
   full-checkout†.
 
