@@ -70,6 +70,10 @@ some basic rules about contributions:
 This contribution guide was inspired by (i.e. stolen from)
 [BearSSL's contribution guide][bearssl].
 
+## Contributors
+
+- Toby DiPasquale [codeslinger](https://github.com/codeslinger)
+
 ## Inspiration
 
 - [Git](https://git-scm.com)
