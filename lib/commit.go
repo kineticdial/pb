@@ -30,7 +30,7 @@ func GetCommit(k string) (*Commit, error) {
 	parent := strings.Split(lines[2], "\t")[1]
 	author := strings.Split(lines[3], "\t")[1]
 	date, err := time.Parse(
-		"2006-01-02 15:04:05.000000000 -0700 MST",
+		"2006-01-02 15:04:05 -0700 MST",
 		strings.Split(lines[4], "\t")[1],
 	)
 	msg := strings.TrimLeft(strings.Join(lines[6:], "\n"), "\t")
