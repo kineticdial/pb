@@ -1,0 +1,69 @@
+{
+    "memo": "9aa88c70901090e803634d69ae9420b4328fc98f56619cea802884c8a10a89e8",
+    "projects": [
+        {
+            "name": "github.com/armon/go-radix",
+            "branch": "master",
+            "revision": "4239b77079c7b5d1243b7b4736304ce8ddb6f0f2",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/bgentry/speakeasy",
+            "branch": "master",
+            "revision": "675b82c74c0ed12283ee81ba8a534c8982c07b85",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/davecgh/go-spew",
+            "version": "v1.1.0",
+            "revision": "346938d642f2ec3594ed81d874461961cd0faa76",
+            "packages": [
+                "spew"
+            ]
+        },
+        {
+            "name": "github.com/mattn/go-isatty",
+            "version": "v0.0.1",
+            "revision": "3a115632dcd687f9c8cd01679c83a06a0e21c1f3",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/mitchellh/cli",
+            "branch": "master",
+            "revision": "8d6d9ab3c912dcb005ece87c40a41b9e73e1999a",
+            "packages": [
+                "."
+            ]
+        },
+        {
+            "name": "github.com/pmezard/go-difflib",
+            "version": "v1.0.0",
+            "revision": "792786c7400a136282c1664665ae0a8db921c6c2",
+            "packages": [
+                "difflib"
+            ]
+        },
+        {
+            "name": "github.com/stretchr/testify",
+            "branch": "master",
+            "revision": "4d4bfba8f1d1027c4fdbe371823030df51419987",
+            "packages": [
+                "assert"
+            ]
+        },
+        {
+            "name": "golang.org/x/sys",
+            "branch": "master",
+            "revision": "99f16d856c9836c42d24e7ab64ea72916925fa97",
+            "packages": [
+                "unix"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "dependencies": {
+        "github.com/mitchellh/cli": {
+            "branch": "master"
+        },
+        "github.com/stretchr/testify": {
+            "branch": "master"
+        }
+    }
+}
