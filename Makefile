@@ -4,6 +4,6 @@ build:
 install:
 	go install -v
 test:
-	go test -v ./...
+	go test -v ./{cli,lib}/...
 lint:
 	golint -set_exit_status
