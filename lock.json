@@ -1,5 +1,5 @@
 {
-    "memo": "f9583d1bc0cb55f2be4c1fd7a9c4993a11925f36ee3ca57b14f7e4de71efad80",
+    "memo": "9aa88c70901090e803634d69ae9420b4328fc98f56619cea802884c8a10a89e8",
     "projects": [
         {
             "name": "github.com/armon/go-radix",
@@ -22,8 +22,7 @@
             "version": "v1.1.0",
             "revision": "346938d642f2ec3594ed81d874461961cd0faa76",
             "packages": [
-                "spew",
-                "spew/testdata"
+                "spew"
             ]
         },
         {
@@ -51,22 +50,11 @@
             ]
         },
         {
-            "name": "github.com/stretchr/objx",
-            "branch": "master",
-            "revision": "1a9d0bb9f541897e62256577b352fdbc1fb4fd94",
-            "packages": [
-                "."
-            ]
-        },
-        {
             "name": "github.com/stretchr/testify",
             "branch": "master",
             "revision": "4d4bfba8f1d1027c4fdbe371823030df51419987",
             "packages": [
-                "assert",
-                "http",
-                "mock",
-                "require"
+                "assert"
             ]
         },
         {
@@ -74,14 +62,7 @@
             "branch": "master",
             "revision": "99f16d856c9836c42d24e7ab64ea72916925fa97",
             "packages": [
-                "plan9",
-                "unix",
-                "windows",
-                "windows/registry",
-                "windows/svc",
-                "windows/svc/debug",
-                "windows/svc/eventlog",
-                "windows/svc/mgr"
+                "unix"
             ]
         }
     ]
