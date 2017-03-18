@@ -1,5 +1,5 @@
 #!/bin/bash
 
-go get -u github.com/mitchellh/cli
+go get -u github.com/golang/dep
 go get -u github.com/golang/lint/golint
-go get -u github.com/stretchr/testify
+dep ensure

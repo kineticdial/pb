@@ -1,4 +1,4 @@
-default: build test lint
+default: build test
 build:
 	go build -v
 install:
@@ -6,5 +6,5 @@ install:
 test:
 	go test -v ./cli/...
 	go test -v ./lib/...
-lint:
-	golint -set_exit_status
+	golint -set_exit_status ./cli/...
+	golint -set_exit_status ./lib/...
