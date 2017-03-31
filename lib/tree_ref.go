@@ -10,7 +10,7 @@ type TreeRef struct {
 	Perms   int    // Permissions of referenced file/dir
 	RefType string // Blob or Tree
 	Name    string // Name of file/dir
-	Hash    string // Hash of Blob/Tree
+	Ref     object // Blob/Tree
 }
 
 // DecodeTreeRef takes a raw tab-delimited string and serializes it into a
@@ -24,11 +24,24 @@ func DecodeTreeRef(s string) (*TreeRef, error) {
 		return nil, err
 	}
 
+	refType := items[1]
+	var ref object
+
+	if refType == "Tree" {
+		ref, err = GetTree(items[3])
+	} else {
+		ref, err = GetBlob(items[3])
+	}
+
+	if err != nil {
+		return nil, err
+	}
+
 	return &TreeRef{
 		Perms:   int(perms),
 		RefType: items[1],
 		Name:    items[2],
-		Hash:    items[3],
+		Ref:     ref,
 	}, nil
 }
 
@@ -40,7 +53,7 @@ func (tr *TreeRef) String() string {
 		tr.Perms,
 		tr.RefType,
 		tr.Name,
-		tr.Hash,
+		tr.Ref.Hash(),
 	)
 }
 

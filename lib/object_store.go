@@ -9,6 +9,7 @@ import "os"
 type object interface {
 	Hash() string
 	String() string
+	Put() error
 }
 
 func putObject(o object) error {

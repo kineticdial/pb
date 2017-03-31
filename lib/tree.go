@@ -39,8 +39,12 @@ func GetTree(k string) (*Tree, error) {
 	return t, nil
 }
 
-// Put stores a Tree in memory into the file k/v store.
+// Put stores a in memory Tree (and all of its children) into the file
+// k/v store.
 func (t *Tree) Put() error {
+	for _, tr := range t.Refs {
+		tr.Ref.Put()
+	}
 	return putObject(t)
 }
 
