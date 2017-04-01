@@ -31,7 +31,7 @@ func TestCommitString(t *testing.T) {
 	index = append(index, []string{"lib", "commit.go", commit.Hash()})
 	index = append(index, []string{"lib", "util", "util.go", util.Hash()})
 	index = append(index, []string{"lib", "commit_test.go", commitTest.Hash()})
-	_, err := algorithms.BuildTreeForCommit(index)
+	_, err := algorithms.BuildTreeFromWorkingIndex(index)
 
 	assert.Equal(t, nil, err)
 
