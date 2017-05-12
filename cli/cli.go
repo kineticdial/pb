@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"flag"
 	"log"
 	"os"
 
@@ -26,6 +27,16 @@ func Main() int {
 		},
 		"init": func() (cli.Command, error) {
 			return &InitCommand{UI: ui}, nil
+		},
+		"commit": func() (cli.Command, error) {
+			msgPtr := flag.String("message", "", "commit message")
+			authorPtr := flag.String("author", "", "commit Author")
+			flag.Parse()
+
+			log.Printf("Msg: %s\n", *msgPtr)
+			log.Printf("Author: %s\n", *authorPtr)
+
+			return &CommitCommand{UI: ui, Msg: *msgPtr, Author: *authorPtr}, nil
 		},
 	}
 
